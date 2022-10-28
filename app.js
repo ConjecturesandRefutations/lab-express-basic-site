@@ -5,10 +5,7 @@ const express = require('express');
 const app = express();
  
 // Make everything inside of public/ available
-app.use(express.static(__dirname + '/public'));;
- 
-//Making stylesheet available
-app.use("/public/stylesheet/styles.css",express.static(__dirname + "/public/stylesheet/styles.css"));
+app.use("/public", express.static(__dirname + '/public'));
 
 // Route to Homepage:
 app.get('/home.html', (req, res) => res.sendFile(__dirname + '/views/home.html'));
